@@ -1,5 +1,6 @@
 html {
     font-size: 16px;
+    font-family: "Lato",sans-serif;
 }
 body{
     display: flex;
@@ -15,7 +16,6 @@ body{
     margin-top:3rem;
     flex-direction: column;
     justify-content: flex-start;
-    font-family: "Lato";
 }
 
 .content {
