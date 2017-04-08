@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>beautiful curl</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <textarea id="raw"  rows="20"></textarea>
+        </div>
+        <div class="ctl">
+            <button class="beautify" onclick="beautify();">beautify</button>
+            <button class="compress" onclick="compress();">compress</button>
+        </div>
+    </div>
+    <script>
+        var txt = document.getElementById('raw');
+        
+        window.onload = function(){
+            txt.value = localStorage.getItem('content');
+        }
+
+        function beautify(){
+            var s = txt.value.replace(/\ +-/g,'\n-');
+            txt.value = s;
+            localStorage.setItem('content',s);
+            txt.scrollLeft=0;
+
+        }
+
+        function compress(){
+            var s = txt.value.replace(/\n/g,' ');
+            txt.value = s;
+            localStorage.setItem('content',s);
+            txt.scrollLeft=0;
+        }
+    </script>
+</body>
+
+</html>
